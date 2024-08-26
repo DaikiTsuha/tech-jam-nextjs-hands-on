@@ -8,6 +8,7 @@ class APIError extends Error {
 }
  
 async function fetchHotpepperData(url: string): Promise<any> {
+  console.log("Fetching data from Hotpepper API:", url);
   const response = await fetch(url);
   if (!response.ok) {
     throw new APIError(response.status, `API request failed: ${response.statusText}`);
